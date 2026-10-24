@@ -1,0 +1,14 @@
+# Opt-in reference for the SocialForex public MCP server (read-only market data:
+# quotes, economic calendar, screener, currency strength, sessions, position size).
+# Remote Streamable HTTP service — DSH connects to it, nothing is installed locally.
+#
+#   pnpm dsh web --patch "$PWD/apps/cli/config/examples/mcp-socialforex/socialforex.cordis.yml"
+#
+# Tools appear as mcp__socialforex__<tool>. See https://github.com/namlxuit056/social-forex/blob/main/docs/mcp.md
+- insert:
+    - id: mcp-socialforex
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: socialforex
+        transport: streamable-http
+        url: https://toolforex.xyz/api/mcp
